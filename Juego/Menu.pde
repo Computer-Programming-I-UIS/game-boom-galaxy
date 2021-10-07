@@ -3,8 +3,6 @@ void menu(){
  image(fmenu,0,0);
  play1();
  creditosP();
-//float d = dist(width/2,height/2,mouseX,mouseY);
-//color c = get(mouseX,mouseY);
 titulo();
 textSize(50);
 fill(j,255,j2);
@@ -16,12 +14,13 @@ println(mouseX,mouseY);
 void titulo(){
 textSize(80);
 fill(255, 255, 110);
+
 text("BoomGalaxy",width/2-230,height/2-90);
 fill(255 );
 text("BoomGalaxy",width/2-233,height/2-90);
 fill(get((int)random(524,528),(int)random(564,568)));
 text("BoomGalaxy",width/2-236,height/2-90);
-delay(150);
+
 }
 boolean play=false;
 boolean credits= false;
