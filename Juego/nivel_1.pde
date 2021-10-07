@@ -1,7 +1,8 @@
  void nivel1(){
- background(escenario1);
-//image(player,width/2,height/2);
-image(enemy,200,300);
+  if(locked==true){
+ background(escenarioTuto);
+
 comandante.Mheroe();
 comandante.Moveheroe();
+  }
  }
