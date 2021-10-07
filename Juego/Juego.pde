@@ -1,33 +1,52 @@
+Movimiento comandante ;
+class Movimiento{
+  float x;
+  float y;
+  int diameter;
+  float speed = 2;
+
+  Movimiento(float tempX, float tempY){
+  x = tempX;
+  y = tempY;
+}
+void Mheroe(){
+image(player,x,y);
+}
+
+void Moveheroe(){
+  if(keyPressed &&(key == CODED)){
+    if(keyCode == RIGHT){
+      x = x + speed;
+    }
+    else if(keyCode == LEFT){
+      x = x - speed;
+    
+    }
+  }
+}
+}
+
 // Imagenes
 PImage escenario1;
 PImage player;
 PImage enemy;
 
-//Variables para el movimiento
-float x;
-float y;
-float r;
-boolean jugadorIzq=false;
-boolean jugadorDer=false;
-boolean jugadorUp=false;
-boolean jugadorDown=false;
-boolean jugadorVisionD=false;
-boolean jugadorVisionI=false;
-float x_=100;
-float y_=300;
-float speed=2;
 
 
 void setup(){
 size(700,600);
+imageMode(CENTER);
 escenario1 = loadImage("escenario.png");
 player = loadImage("personaje.png");
 enemy = loadImage("enemigo.png");
-
+comandante = new Movimiento(600,550);
 }
+
+
 void draw(){
 background(escenario1);
-keyPressed();
-image(enemy,200,300);
-
+//image(player,width/2,height/2);
+//image(enemy,200,300);
+comandante.Mheroe();
+comandante.Moveheroe();
 }
