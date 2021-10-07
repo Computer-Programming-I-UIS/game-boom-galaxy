@@ -1,9 +1,18 @@
+int i = 0;
 Movimiento comandante ;
+// Imagenes
+PImage escenario1;
+PImage player;
+PImage enemy;
+PImage fmenu;
+PFont titulos;
+
 class Movimiento{
+
   float x;
   float y;
   int diameter;
-  float speed = 2;
+  float speed = 4;
 
   Movimiento(float tempX, float tempY){
   x = tempX;
@@ -24,29 +33,26 @@ void Moveheroe(){
     }
   }
 }
+
+
 }
 
-// Imagenes
-PImage escenario1;
-PImage player;
-PImage enemy;
+
 
 
 
 void setup(){
 size(700,600);
 imageMode(CENTER);
+titulos = loadFont("titulos.vlw");
+textFont(titulos);
 escenario1 = loadImage("escenario.png");
 player = loadImage("personaje.png");
 enemy = loadImage("enemigo.png");
 comandante = new Movimiento(600,550);
+fmenu = loadImage("fondomenu.jpg");
 }
-
-
 void draw(){
-background(escenario1);
-//image(player,width/2,height/2);
-//image(enemy,200,300);
-comandante.Mheroe();
-comandante.Moveheroe();
+menu();
+
 }
