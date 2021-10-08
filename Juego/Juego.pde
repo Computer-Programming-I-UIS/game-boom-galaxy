@@ -44,7 +44,7 @@ if(mousePressed){
 }
 if(x>=700){
 Nivel=2;
-x=100;
+x=45;
 }
 
 }
@@ -121,7 +121,7 @@ switch(Nivel){
   case 1: 
   /*menum.play();*/
   nivel1();
-
+  
  
   break;
   
