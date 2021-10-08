@@ -11,6 +11,7 @@ PImage fmenu;
 PFont titulos;
 PImage bloque;
 PImage teclas;
+PImage mouse;
 int sizeBlocks =32;
 int numBlocksX= 22;
 int numBlocksY=19;
@@ -23,6 +24,7 @@ class Movimiento{
   float speed = 4;
   float speedy=10;
   boolean trans=false;
+  boolean cambioesc=false;
 
   Movimiento(float tempX, float tempY){
   x = tempX;
@@ -35,6 +37,11 @@ if(mousePressed){
   fill(252, 252, 20);
   triangle(x+40,y+10,x+90,y,x+90,y+30);
 }
+if(x>=710){
+Nivel=2;
+x=100;
+}
+
 }
 
 void Moveheroe(){
@@ -68,6 +75,7 @@ void Jumphero(){
   
 }
 
+
 }
 
 
@@ -80,7 +88,7 @@ void Jumphero(){
 
 
 
-
+int Nivel=1;
 
 void setup(){
 size(700,600);
@@ -97,12 +105,28 @@ fmenu = loadImage("fondomenu.jpg");
 creditos =loadImage("creditos.png");
 bloque = loadImage("bloque.png");
 teclas = loadImage("Teclas.png");
+mouse =loadImage("mouse.png");
 
 }
 void draw(){
 menu();
 creditos();
-nivel1();
+switch(Nivel){
+  case 1: 
+  nivel1();
+
+ 
+  break;
+  
+  case 2:
+  nivel2();
+
+  break;
+  
+
+
+
+}
 
 
 }
