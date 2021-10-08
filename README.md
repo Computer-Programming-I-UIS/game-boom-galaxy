@@ -18,5 +18,5 @@ Juego arcade de plataformas
 
 # Graficos
 Los graficos se realizaron en pixilart(https://www.pixilart.com/)
- # importante
+ # Importante
  Descargar la biblioteca minim
