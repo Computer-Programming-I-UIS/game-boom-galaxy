@@ -1,6 +1,6 @@
-/*import ddf.minim.*;
+import ddf.minim.*;
 Minim minim;
-AudioPlayer menum;*/
+AudioPlayer menum;
 
 int i = 0;
 Movimiento comandante ;
@@ -111,7 +111,8 @@ creditos =loadImage("creditos.png");
 bloques = loadImage("piso.png");
 teclas = loadImage("Teclas.png");
 mouse =loadImage("mouse.png");
-/*menum = minim.loadFile("Menu.wav");*/
+minim= new Minim(this);
+menum = minim.loadFile("sonido.mp3");
 
 }
 void draw(){
@@ -119,7 +120,7 @@ menu();
 creditos();
 switch(Nivel){
   case 1: 
-  /*menum.play();*/
+  menum.play();
   nivel1();
   
  
