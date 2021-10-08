@@ -1,5 +1,7 @@
 # Game-boom-galaxy
 BoomGalaxy es un juego basado en el juego arcade tumblepop pero cambiandola tematica por una que tiene que ver con el espacio, se pretende que el jugador controle al heroe y elimine a sus enemigos con su rayo desintegrador.
+![unknown](https://user-images.githubusercontent.com/89653251/136491451-ed8443c0-52a4-4bf1-ad72-96f9641added.png)
+
 
 # Clasificacion
 Juego arcade de plataformas
