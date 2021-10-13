@@ -26,6 +26,8 @@ boolean play=false;
 boolean credits= false;
 boolean locked=false;
 boolean locked2=false;
+boolean locked3=false;
+boolean backmenu=false;
 float j=255;
 float c=255;
 float j2=255;
@@ -34,6 +36,9 @@ void play1(){
 if(mouseX>=280 && mouseX<=430 && mouseY>=256 && mouseY<=300){
   play=true;
 j2=0;
+if(locked==true){
+Nivel=1;
+}
 
   }else {
     play= false;
@@ -46,6 +51,7 @@ void creditosP(){
 if(mouseX>=255 && mouseX<=465 && mouseY>=346 && mouseY<=400){
 credits=true;
 c2=0;
+if(locked2==true){Nivel=6;}
 }else {
     credits= false;
    c2=255;
@@ -54,15 +60,34 @@ c2=0;
 
   
 }
+void Backmenu(){
+fill(255,0,15);
+text("Menu",520,580);
+if(mouseX>=515 && mouseX<=600 && mouseY>=543 && mouseY<=583){
+ backmenu=true;
+if(locked3==true){
+ Nivel=0;
+}
+}
+}
 
 
 void mousePressed(){
 if (play){
   locked=true;
+ 
   }
 
 if(credits){
 locked2=true;
+
 }
-  
+ if(backmenu){
+ locked3=true;
+ }
+}
+void mouseReleased(){
+locked3=false;
+locked2=false;
+locked=false;
 }

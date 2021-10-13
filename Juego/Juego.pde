@@ -43,7 +43,7 @@ if(mousePressed){
   triangle(x+40,y+10,x+90,y,x+90,y+30);
 }
 if(x>=700){
-Nivel=2;
+Nivel++;
 x=45;
 }
 
@@ -93,7 +93,7 @@ void Jumphero(){
 
 
 
-int Nivel=1;
+int Nivel=0;
 
 void setup(){
 size(700,600);
@@ -116,19 +116,26 @@ menum = minim.loadFile("sonido.mp3");
 
 }
 void draw(){
-menu();
-creditos();
-switch(Nivel){
-  case 1: 
-  menum.play();
-  nivel1();
-  
  
+  
+switch(Nivel){
+  case 0: 
+   menu();
+  menum.play();
+ 
+  
+  break;
+  case 1:
+  menum.pause();
+  nivel1();
   break;
   
   case 2:
   nivel2();
-
+  break;
+  
+  case 6:
+  creditos();
   break;
   
 
@@ -136,5 +143,5 @@ switch(Nivel){
 
 }
 
-
+ 
 }
