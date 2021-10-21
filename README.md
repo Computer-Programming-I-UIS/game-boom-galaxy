@@ -45,11 +45,12 @@ el cual cuenta con una tutorial basico de como usar la libreria Fisica en proces
 
 # Musica y sonidos:
 
+# Graficos
+Los graficos se realizaron en pixilart(https://www.pixilart.com/)
 
 # Elaborado por:
 -Juan laignelet
 
 -Danilo Sanchez
 
-# Graficos
-Los graficos se realizaron en pixilart(https://www.pixilart.com/)
+
