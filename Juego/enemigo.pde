@@ -16,6 +16,7 @@ void inicializar(float _x, float _y)
   
   setName("teleport");
   setStatic(true);
+  attachImage(loadImage("teleport.png"));
   }
   
   

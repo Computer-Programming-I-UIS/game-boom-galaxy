@@ -116,7 +116,11 @@ switch(Nivel){
   nivel2();
   break;
   
-  case 6:
+  case 3:
+  opcionesT();
+  break;
+  
+  case 4:
   creditos();
   break;
   
@@ -139,6 +143,9 @@ comandante1.DerPressed = true;
 }
 if (key== 'w'){
 comandante1.UpPressed = true;
+}
+if(key== ENTER){
+Nivel=0;
 }
 
 }

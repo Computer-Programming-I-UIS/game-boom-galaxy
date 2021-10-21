@@ -1,14 +1,17 @@
 void menu(){
-  imageMode(CORNER);
+ imageMode(CORNER);
  image(fmenu,0,0);
  play1();
  creditosP();
+ opciones1();
 titulo();
 textSize(50);
 fill(j,255,j2);
 text("Jugar",width/2-60,height/2);
 fill(c,255,c2);
 text("Creditos", width/2-90, height/2+90);
+fill(o,255,o2);
+text("Controles", width/2-100, height/2+160);
 println(mouseX,mouseY);
 }
 void titulo(){
@@ -27,11 +30,15 @@ boolean credits= false;
 boolean locked=false;
 boolean locked2=false;
 boolean locked3=false;
+boolean locked4=false;
 boolean backmenu=false;
+boolean opciones=false;
 float j=255;
 float c=255;
 float j2=255;
 float c2=255;
+float o=255;
+float o2=255;
 void play1(){
 if(mouseX>=280 && mouseX<=430 && mouseY>=256 && mouseY<=300){
   play=true;
@@ -40,7 +47,7 @@ if(locked==true){
 Nivel=1;
 }
 
-  }else {
+}else {
     play= false;
    j2=255;
    
@@ -51,7 +58,7 @@ void creditosP(){
 if(mouseX>=255 && mouseX<=465 && mouseY>=346 && mouseY<=400){
 credits=true;
 c2=0;
-if(locked2==true){Nivel=6;}
+if(locked2==true){Nivel=4;}
 }else {
     credits= false;
    c2=255;
@@ -59,6 +66,20 @@ if(locked2==true){Nivel=6;}
   }
 
   
+}
+
+void opciones1(){
+if(mouseX>=250 && mouseX<=480 && mouseY>=420 && mouseY<=460){
+opciones=true;
+o2=0;
+if(locked4==true){Nivel=3;}
+}else {
+    opciones= false;
+   o2=255;
+   
+  }
+  
+
 }
 void Backmenu(){
 fill(255,0,15);
@@ -85,9 +106,14 @@ locked2=true;
  if(backmenu){
  locked3=true;
  }
+ if(opciones){
+ locked4=true;
+ 
+ }
 }
 void mouseReleased(){
 locked3=false;
 locked2=false;
 locked=false;
+locked4=false;
 }
