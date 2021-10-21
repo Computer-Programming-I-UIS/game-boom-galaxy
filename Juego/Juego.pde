@@ -26,7 +26,7 @@ PImage fmenu;
 PFont titulos;
 PImage bloques;
 PImage controles;
-
+PImage win;
 
 int sizeBlocks =32;
 int numBlocksX= 22;
@@ -42,6 +42,7 @@ void setup(){
 size(700,600);
 imageMode(CENTER);
 titulos = loadFont("titulos.vlw");
+win = loadImage("win.png");
 textFont(titulos);
 escenario1 = loadImage("escenario.png");
 escenarioTuto = loadImage("escenarioTuto.png");
