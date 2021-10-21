@@ -5,6 +5,7 @@
 BoomGalaxy es un juego basado en el juego inspirado en  tumblepop pero con tematica espacial, se pretende que el jugador controle al heroe y evite a sus enemigos para poder seguir avanzando de nivel y lograr llegar a su planeta.
 
 # Gameplay lanzamiento
+https://www.youtube.com/watch?v=V4mASu4XU9I
 
 
 # Código
