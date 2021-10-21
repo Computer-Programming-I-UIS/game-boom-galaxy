@@ -25,8 +25,9 @@ PImage enemy;
 PImage fmenu;
 PFont titulos;
 PImage bloques;
-PImage teclas;
-PImage mouse;
+PImage controles;
+
+
 int sizeBlocks =32;
 int numBlocksX= 22;
 int numBlocksY=19;
@@ -51,8 +52,7 @@ disparo = new Movimiento(600,550);*/
 fmenu = loadImage("fondomenu.jpg");
 creditos =loadImage("creditos.png");
 bloques = loadImage("piso.png");
-teclas = loadImage("Teclas.png");
-mouse =loadImage("mouse.png");
+controles =loadImage("controles.png");
 minim= new Minim(this);
 menum = minim.loadFile("sonido.mp3");
 /*-----------------------------------------------------Uso de la libreria 'Fisica'---------------------------------------------------------------------------------------*/

@@ -1,6 +1,6 @@
 void opcionesT(){
   
-background(0);
+background(controles);
 
 
 }
