@@ -1,8 +1,17 @@
+import fisica.*;
+
+FWorld world;
+Plataforma piso;
+ArrayList <Plataforma> plataformas;
+Personaje comandante1;
+
+
 import ddf.minim.*;
 Minim minim;
 AudioPlayer menum;
 
 int i = 0;
+int Nivel=0;
 Movimiento comandante ;
 Movimiento disparo;
 // Imagenes
@@ -20,6 +29,7 @@ int sizeBlocks =32;
 int numBlocksX= 22;
 int numBlocksY=19;
 int floor=484;
+
 
 class Movimiento{
 
@@ -72,7 +82,7 @@ void Jumphero(){
       
     }
     else if(keyCode == DOWN){
-     if(y<=520) y = y + speedy;
+     if(y<=530) y = y + speedy;
     
     }
     
@@ -84,17 +94,7 @@ void Jumphero(){
 }
 
 
-
-
-
-
-
-
-
-
-
-int Nivel=0;
-
+/* ---------------------------------------------------------Setup-------------------------------------------------------------------------------------------------------------------*/
 void setup(){
 size(700,600);
 imageMode(CENTER);
@@ -113,8 +113,32 @@ teclas = loadImage("Teclas.png");
 mouse =loadImage("mouse.png");
 minim= new Minim(this);
 menum = minim.loadFile("sonido.mp3");
+/*-----------------------------------------------------Uso de la libreria 'Fisica'---------------------------------------------------------------------------------------*/
+Fisica.init(this);
+world = new FWorld();
+
+piso = new Plataforma(width, 32);
+piso.inicializar(width / 2, height - 8);
+world. add(piso);
+
+plataformas = new ArrayList <Plataforma> ();
+for(int i=0; i<4; i++){
+  Plataforma p = new Plataforma(96,32);
+  p.inicializar(i*100  + 228, height - 100 - (i*100));
+  world.add(p);
+  plataformas.add(p);
 
 }
+comandante1= new Personaje(98,92);
+comandante1.inicializar(40, height * 0.75);
+world.add(comandante1);
+
+
+
+/* --------------------------------------------------------------------Fin del setup--------------------------------------------------------------------------------------------------*/
+}
+
+/*-----------------------------------------------------------------------Draw--------------------------------------------------------------------------------------------------------*/
 void draw(){
  
   
