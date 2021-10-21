@@ -104,12 +104,14 @@ switch(Nivel){
   case 0: 
    menu();
   menum.play();
- 
+  
   
   break;
   case 1:
   menum.pause();
   nivel1();
+
+ 
   break;
   
   case 2:
@@ -146,6 +148,10 @@ comandante1.UpPressed = true;
 }
 if(key== ENTER){
 Nivel=0;
+anuncio="";
+comandante1.inicializar(40, height - 100);
+world.add(comandante1);
+comandante1.actualizar();
 }
 
 }
