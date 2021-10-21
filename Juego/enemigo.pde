@@ -11,6 +11,7 @@ void inicializar(float _x, float _y)
   if(tipo.equals("alien")){
    setName("alien");
  setStatic(true);
+ attachImage(loadImage("enemigo.png"));
   }else if (tipo.equals("teleport")){
   
   setName("teleport");

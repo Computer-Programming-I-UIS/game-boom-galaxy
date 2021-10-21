@@ -3,7 +3,7 @@ import fisica.*;
 FWorld world;
 Plataforma piso;
 ArrayList <Plataforma> plataformas;
-Personaje comandante1;
+Personaje comandante1, disparo;
 Enemigo alien, teleport;
 
 String anuncio;
@@ -58,25 +58,30 @@ menum = minim.loadFile("sonido.mp3");
 /*-----------------------------------------------------Uso de la libreria 'Fisica'---------------------------------------------------------------------------------------*/
 Fisica.init(this);
 world = new FWorld();
+world.setEdges();
 
-piso = new Plataforma(width, 32);
+piso = new Plataforma(width, 45);
 piso.inicializar(width / 2, height - 8);
 world. add(piso);
 
 plataformas = new ArrayList <Plataforma> ();
 for(int i=0; i<4; i++){
-  Plataforma p = new Plataforma(96,32);
-  p.inicializar(i*100  + 220, height - 100 - (i*100));
+  Plataforma p = new Plataforma(160,32);
+  p.inicializar(i*100  + 220, height - 100 - (i*110));
   world.add(p);
   plataformas.add(p);
 
 }
-comandante1= new Personaje(42,45);
+comandante1= new Personaje(80,92);
 comandante1.inicializar(40, height * 0.75);
 world.add(comandante1);
 
-alien = new Enemigo(40,40, "alien");
-alien.inicializar(plataformas.get(2).getX(), plataformas.get(2).getY() - alien.getHeight() / 2 - plataformas.get(3).getHeight() / 2);
+/*disparo= new Personaje(20,90);
+disparo.inicializar(45, height * 0.75);
+world.add(disparo);*/
+
+alien = new Enemigo(70,90, "alien");
+alien.inicializar(plataformas.get(2).getX()+30, plataformas.get(2).getY() - alien.getHeight() / 2 - plataformas.get(3).getHeight() / 2);
 world.add(alien);
 
 teleport = new Enemigo(40,40, "teleport");

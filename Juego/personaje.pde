@@ -23,6 +23,7 @@ void inicializar(float _x, float _y)
  setRestitution(0);
  setFriction(0);
  setRotatable(false);
+ attachImage(loadImage("personaje.png"));
 }
 void actualizar(){
 if(alive){
@@ -51,8 +52,6 @@ alive =false;
 
 
 }
-
-
 
 
 }
