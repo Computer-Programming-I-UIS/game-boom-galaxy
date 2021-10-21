@@ -31,7 +31,7 @@ Juego arcade de plataforma
 
 # Un jugador local
 * Movimiento con las teclas: W, A y D
-* Para devolverse al menu en cualquier cmomento de l apartida presione la tecla ENTER.
+* Para devolverse al menu en cualquier momento de la partida presione la tecla ENTER.
 
 # Editor de mapa
  El mapa puede ser editado por el jugador a gusto, obteniendo infinidad de opciones para aumentar o facilitar la dificultad de dicho nivel.
