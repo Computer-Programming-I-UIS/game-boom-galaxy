@@ -12,6 +12,7 @@ text("Haz click para disparar.",200,200);
 /*comandante.Mheroe();
 comandante.Moveheroe();
 comandante.Jumphero();*/
+comandante1.actualizar();
  world.step();
  world.draw();
 
