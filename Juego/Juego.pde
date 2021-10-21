@@ -80,7 +80,7 @@ world.add(comandante1);
 disparo.inicializar(45, height * 0.75);
 world.add(disparo);*/
 
-alien = new Enemigo(70,90, "alien");
+alien = new Enemigo(80,80, "alien");
 alien.inicializar(plataformas.get(2).getX()+30, plataformas.get(2).getY() - alien.getHeight() / 2 - plataformas.get(3).getHeight() / 2);
 world.add(alien);
 
