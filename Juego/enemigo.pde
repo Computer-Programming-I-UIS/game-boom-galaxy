@@ -10,9 +10,14 @@ void inicializar(float _x, float _y)
 {
   if(tipo.equals("alien")){
    setName("alien");
- setPosition(_x, _y);
  setStatic(true);
+  }else if (tipo.equals("teleport")){
+  
+  setName("teleport");
+  setStatic(true);
   }
+  
+  
 setPosition(_x,_y);
 setRotatable(false);
 }

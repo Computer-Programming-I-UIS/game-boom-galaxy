@@ -4,7 +4,9 @@ FWorld world;
 Plataforma piso;
 ArrayList <Plataforma> plataformas;
 Personaje comandante1;
-Enemigo alien;
+Enemigo alien, teleport;
+
+String anuncio;
 
 import ddf.minim.*;
 Minim minim;
@@ -74,9 +76,15 @@ comandante1.inicializar(40, height * 0.75);
 world.add(comandante1);
 
 alien = new Enemigo(40,40, "alien");
-alien.inicializar(plataformas.get(3).getX(), plataformas.get(3).getY() - alien.getHeight() / 2 - plataformas.get(3).getHeight() / 2);
+alien.inicializar(plataformas.get(2).getX(), plataformas.get(2).getY() - alien.getHeight() / 2 - plataformas.get(3).getHeight() / 2);
 world.add(alien);
 
+teleport = new Enemigo(40,40, "teleport");
+teleport.inicializar(plataformas.get(3).getX(), plataformas.get(3).getY() - alien.getHeight() / 2 - plataformas.get(3).getHeight() / 2);
+world.add(teleport);
+
+textMode(CENTER);
+anuncio="";
  
   
 
@@ -111,7 +119,10 @@ switch(Nivel){
 
 
 }
+fill(255,15,15);
+textSize(60);
 
+text(anuncio, width / 2 - 120, height / 2);
  
 }
 void keyPressed(){
@@ -141,6 +152,8 @@ comandante1.UpPressed = false;
 void contactStarted(FContact contact){
 FBody _body1= contact.getBody1();
 FBody _body2= contact.getBody2();
+
+//contacto entre el personaje y la plataforma
   if ((_body1.getName() == "personaje" && (_body2.getName() == "plataforma"))
   || (_body2.getName() == "personaje" && (_body1.getName() == "plataforma")))
   {
@@ -155,8 +168,31 @@ FBody _body2= contact.getBody2();
        comandante1.puedesaltar = true;
       }
     }
-
-
-
   }
+  //contacto entre el alien y el personaje 
+  if ((_body1.getName() == "personaje" && _body2.getName() == "alien")
+  || (_body2.getName() == "personaje" && _body1.getName() == "alien")){
+  if(comandante1.alive){
+  gameover();
+  }
+  
+  }
+  // contacto entre personaje y teleport
+   if ((_body1.getName() == "personaje" && _body2.getName() == "teleport")
+  || (_body2.getName() == "personaje" && _body1.getName() == "teleport")){
+  Nivel=2;
+  }
+  
+  
+  
+}
+void gameover(){
+  anuncio= "Game Over";
+  comandante1.muerte();
+  world.remove(comandante1);
+}
+void Win(){
+  anuncio= "Bien hecho";
+  comandante1.muerte();
+  world.remove(comandante1);
 }

@@ -1,3 +1,4 @@
+
  void nivel1(){
 
 background(escenario1);
@@ -9,10 +10,10 @@ image(enemy,620,110);
 fill(255);
 textSize(20);
 text("Haz click para disparar.",200,200);
-/*comandante.Mheroe();
-comandante.Moveheroe();
-comandante.Jumphero();*/
+
+
 comandante1.actualizar();
+
  world.step();
  world.draw();
 

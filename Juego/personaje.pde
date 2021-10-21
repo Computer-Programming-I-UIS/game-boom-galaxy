@@ -3,7 +3,7 @@ class Personaje extends FBox
  
   boolean IzqPressed, DerPressed, UpPressed;
   boolean puedesaltar;
-  
+  boolean alive;
   
   Personaje (float _w, float _h)
  {
@@ -15,6 +15,7 @@ void inicializar(float _x, float _y)
   DerPressed= false;
   UpPressed = false;
   puedesaltar=false;
+  alive=true;
   
  setName("personaje");
  setPosition(_x, _y);
@@ -24,6 +25,7 @@ void inicializar(float _x, float _y)
  setRotatable(false);
 }
 void actualizar(){
+if(alive){
 if(IzqPressed){
 setVelocity(-90,getVelocityY());
 }
@@ -38,6 +40,14 @@ setVelocity(getVelocityX(),-220);
 puedesaltar= false;
 }
 
+
+
+}
+
+}
+
+void muerte(){
+alive =false;
 
 
 }
